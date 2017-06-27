@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			canvas{
+				border: 1px solid #ccc;
+			}
+		</style>
+	</head>
+	<body>
+		<canvas id="canvas" width="500" height="500">您的浏览器不支持canvas标签，请更换别的浏览器试试。</canvas>
+	</body>
+	<script type="text/javascript">
+		
+		//1、获得DOM节点
+		var canvas = document.getElementById("canvas");
+		//2、获取上下文对象  --- 绘图就是基于ctx的
+		var ctx = canvas.getContext("2d");
+		
+		/**
+		 * 两点定一线
+		 * ctx.moveTo(x,y);//移点   --- 重新开始绘制线段，结束上一次的绘制
+		 * ctx.lineTo(x,y);//连线
+		 * 
+		 * 填充和边框
+		 * 
+		 * 
+		 * ctx.lineWidth = 10   线宽
+		 * ctx.lineCap = "round";//round,square,
+		 * round起始点和终止点光滑圆弧
+		 * 
+		 * 
+		 * ctx.lineJoin  = ""//miter/bevel/round
+		 */
+		
+//		ctx.moveTo(100,100);
+//		ctx.lineTo(200,200);
+////		ctx.lineTo(150,200);
+//		ctx.moveTo(150,200);
+//		ctx.lineTo(200,100);
+//		ctx.stroke();
+//		ctx.fill();
+
+//		ctx.lineTo(300,300);
+//		ctx.lineTo(200,400);
+//		ctx.lineTo(100,300);
+//		ctx.stroke();
+//		ctx.fill();
+		var R = 200,r = 30,x=250,y=250;
+		ctx.lineWidth = 10;
+//		ctx.lineCap = "square";//round,,round
+		ctx.lineJoin = "round"; //连接点光滑
+		for (var i = 0; i < 6; i++) {
+				
+              ctx.lineTo(Math.cos((18 + i * 72 ) / 180 * Math.PI) * R + x, -Math.sin((18 + i * 72 ) / 180 * Math.PI) * R + y);
+              ctx.lineTo(Math.cos((54 + i * 72 ) / 180 * Math.PI) * r + x, -Math.sin((54 + i * 72 ) / 180 * Math.PI) * r + y);
+          }
+		ctx.stroke();
+	</script>
+</html>

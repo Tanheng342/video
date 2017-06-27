@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			canvas{
+				border: 1px solid #ccc;
+			}
+		</style>
+	</head>
+	<body>
+		<canvas id="canvas" width="500" height="500">您的浏览器不支持canvas标签，请更换别的浏览器试试。</canvas>
+	</body>
+	<script type="text/javascript">
+		
+		//1、获得DOM节点
+		var canvas = document.getElementById("canvas");
+		//2、获取上下文对象  --- 绘图就是基于ctx的
+		var ctx = canvas.getContext("2d");
+		
+		
+		/**
+		 *  ctx.font="italic 30px 微软雅黑";//顺序不能改 
+		  *ctx.fillStyle = "color";或者ctx.strokeStyle = "color"; 
+		  ctx.textBaseline = "";设置垂直对齐方式 
+		  ctx.textAlign = "";设置水平对齐方式 
+		  ctx.fillText("文本",x,y)（实心字）或者ctx.strokeText("文本",x,y)（字的轮廓）; 
+		  注：上面带*的那个设置，其实设置的时字体的颜色
+		 */
+		var lg = ctx.createLinearGradient(0,0,500,500);
+		//偏移量及颜色设置，偏移量0-1
+		lg.addColorStop(0,"#f00");
+		lg.addColorStop(0.5,"#0f0");
+		lg.addColorStop(1,"#00f");
+		ctx.strokeStyle = lg;
+		ctx.font = "italic 30px 黑体";
+		ctx.textBaseline = "top";
+		ctx.strokeText("helloworld",100,100);
+		
+		ctx.strokeRect(100,100,300,300)
+	</script>
+</html>

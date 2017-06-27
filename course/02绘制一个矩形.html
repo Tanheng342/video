@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			canvas{
+				border: 1px solid #ccc;
+			}
+		</style>
+	</head>
+	<body>
+		<canvas id="canvas" width="500" height="500">您的浏览器不支持canvas标签，请更换别的浏览器试试。</canvas>
+	</body>
+	<script type="text/javascript">
+		
+		//1、获得DOM节点
+		var canvas = document.getElementById("canvas");
+		//2、获取上下文对象  --- 绘图就是基于ctx的
+		var ctx = canvas.getContext("2d");
+		
+		
+		/**
+		 * ctx.rect(x,y,w,h)
+		 * ctx.beginPath()     重新开始绘制    接下来的绘制都是重新基于原点的
+		 * ctx.closePath()
+		 * 
+		 * 绘制矩形并且直接填充
+		 * 	ctx.fillRect();
+		 * 绘制矩形并且直接绘制边框
+		 * ctx.strokeRect();
+		 * 
+		 * 
+		 * 清除矩形区域 ----- 橡皮擦
+		 * ctx.clearRect(x,y,w,h)
+		 */
+		
+		//
+		ctx.strokeStyle = "#f66";
+		ctx.rect(10,10,100,100);
+		ctx.stroke();
+		
+		ctx.beginPath();
+		
+		ctx.fillStyle = "#00f";
+		ctx.rect(120,10,100,100);
+		ctx.fill();
+		
+		ctx.closePath();
+		ctx.beginPath();
+		
+		ctx.fillStyle = "#f66";
+		ctx.fillRect(230,10,100,100);
+		
+		ctx.closePath();
+		ctx.beginPath();
+		
+		ctx.strokeStyle = "#00f";
+		ctx.strokeRect(10,120,100,100);
+		
+		ctx.closePath();
+		
+		ctx.clearRect(130,20,150,50)
+	</script>
+</html>

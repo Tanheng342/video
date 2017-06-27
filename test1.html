@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<canvas id="clock"></canvas>
+		<canvas id="clock1"></canvas>
+		<script type="text/javascript" src="clock.js" ></script>
+		<script>
+
+			new Clock({
+				target:"#clock",
+				width:800,
+				height:400
+			});
+			new Clock({
+				target:"#clock1",
+				width:300,
+				height:200
+			});
+		</script>
+	</body>
+</html>

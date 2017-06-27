@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<canvas id="myCanvas" width="500" height="700"></canvas>
+		
+		
+	</body>
+	<script type="text/javascript">
+		var myCanvas = document.getElementById("myCanvas");
+		
+		var paint = myCanvas.getContext("2d");
+		
+//		paint.beginPath();
+//		paint.arc(250,100,60,Math.PI / 4 *7  ,Math.PI / 4 * 5,false);
+//		paint.fill();
+//	
+		
+		
+		
+		//头
+		paint.fillStyle = "deepskyblue";
+		paint.beginPath();
+		paint.arc(250,120,120,Math.PI/4,Math.PI/4*3,true);
+		paint.fill();
+		paint.stroke();
+		
+		
+		
+		//脸廓
+		paint.beginPath();
+		paint.fillStyle = "white";
+		paint.bezierCurveTo(195,45,90,100,190,205);
+		paint.fill();
+		paint.stroke();
+		
+
+		paint.beginPath();
+		paint.fillStyle = "white";
+		paint.bezierCurveTo(304,45,410,100,309,205);
+		paint.fill();
+		paint.stroke();
+	
+	
+		paint.beginPath();
+		paint.fillRect(190,45,119,160);
+		
+		
+		//左眼
+		paint.beginPath();
+		paint.strokeStyle = "black";
+		paint.fillStyle = "white";
+		paint.arc(220,40,30,0,Math.PI*2,false);
+		paint.stroke();
+		paint.fill();
+		
+		//右眼
+		paint.beginPath();
+		paint.strokeStyle = "black";
+		paint.arc(280,40,30,0,Math.PI*2,false);
+		paint.stroke();
+		paint.fillStyle = "white";
+		paint.fill();
+		
+		//左眼珠
+		paint.beginPath();
+		paint.fillStyle = "black";
+		paint.arc(230,44,8,0,Math.PI*2,false);
+		paint.fill();
+		
+		//右眼珠
+		paint.beginPath();
+		paint.fillStyle = "black";
+		paint.arc(269,44,8,0,Math.PI*2,false);
+		paint.fill();
+		
+		//左眼眸
+		paint.beginPath();
+		paint.fillStyle = "white";
+		paint.arc(230,44,3,0,Math.PI*2,false);
+		paint.fill();
+	
+		//右眼眸
+		paint.beginPath();
+		paint.fillStyle = "white";
+		paint.arc(269,44,3,0,Math.PI*2,false);
+		paint.fill();
+		
+		
+		
+		//鼻子
+		
+		paint.beginPath();
+		paint.fillStyle = "red";
+		paint.arc(250,80,20,Math.PI * 2,false);
+		paint.fill();
+		paint.stroke();
+		
+		
+//		
+//		paint.beginPath();
+//		paint.fillStyle = "lightcyan";
+//		paint.arc(245,73,7,0,Math.PI * 2,false);
+//		paint.fill();
+//		paint.stroke();
+//		
+//		
+//		
+		//嘴线
+		
+		paint.beginPath();
+		paint.fillStyle = "white";
+		paint.bezierCurveTo(180,140,240,240,320,140);
+		paint.fill();
+		paint.stroke();
+		
+		
+		
+		
+		//须左上
+
+		paint.beginPath();
+		paint.fillStyle = "black";
+		paint.moveTo(230,90);
+		paint.lineTo(180,80);
+		paint.fill();
+		paint.stroke();
+				
+		
+		
+		//须左中
+		
+		paint.beginPath();
+		paint.fillStyle = "black";
+		paint.moveTo(230,120);
+		paint.lineTo(180,116);
+		paint.fill();
+		paint.stroke();
+				
+				
+			
+		//须左下
+		
+		paint.beginPath();
+		paint.fillStyle = "black";
+		paint.moveTo(230,144);
+		paint.lineTo(180,150);
+		paint.fill();
+		paint.stroke();
+				
+			
+			
+			
+		//须右上
+
+		paint.beginPath();
+		paint.fillStyle = "black";
+		paint.moveTo(270,90);
+		paint.lineTo(320,80);
+		paint.fill();
+		paint.stroke();
+				
+		
+		
+		//须右中
+		
+		paint.beginPath();
+		paint.fillStyle = "black";
+		paint.moveTo(270,120);
+		paint.lineTo(320,116);
+		paint.fill();
+		paint.stroke();
+				
+				
+			
+		//须右下
+		
+		paint.beginPath();
+		paint.fillStyle = "black";
+		paint.moveTo(270,144);
+		paint.lineTo(320,150);
+		paint.fill();
+		paint.stroke();
+				
+			
+		
+		
+		
+			
+		//鼻下线
+			
+		paint.beginPath();
+		paint.fillStyle = "black";
+		paint.moveTo(250,99);
+		paint.lineTo(250,185);
+		paint.fill();
+		paint.stroke();
+		
+		
+		
+		//左拳
+		paint.beginPath();
+		paint.fillStyle = "white";
+		paint.strokeStyle = "black";
+		paint.arc(200,175,20,0,Math.PI * 2,false);
+		paint.fill();
+		paint.stroke();
+		
+				
+				
+		//脖子
+		
+		paint.beginPath();
+		paint.fillStyle = "red";
+		paint.bezierCurveTo(170,205,210,200,340,205);
+		paint.quadraticCurveTo(343,210,342,216);
+		paint.quadraticCurveTo(250,210,170,216);
+		paint.fill();
+		paint.stroke();
+		
+		
+		
+		
+			
+		//身体
+		paint.beginPath();
+		paint.fillStyle = "deepskyblue";
+		paint.bezierCurveTo(340,216,360,230,375,260);
+		paint.quadraticCurveTo(365,272,348,280);
+		paint.quadraticCurveTo(342,220,343,225);
+		paint.stroke();
+		paint.fill();
+		
+		
+		paint.beginPath();
+		paint.bezierCurveTo(342,235,360,290,341,350);
+		paint.quadraticCurveTo(300,360,250,350);
+		paint.quadraticCurveTo(190,360,150,350);
+		paint.quadraticCurveTo(140,310,150,260);
+		paint.quadraticCurveTo(120,230,180,176);
+		paint.quadraticCurveTo(180,185,205,195);
+		paint.quadraticCurveTo(200,195,190,230);
+		paint.bezierCurveTo(190,206,210,210,340,215);
+		paint.stroke();
+		paint.fill();
+		
+		
+		paint.beginPath();
+		paint.moveTo(198,204);
+		paint.lineTo(185,233);
+		paint.stroke();
+		
+
+
+
+		
+		
+		
+	
+		
+		
+		//肚兜
+		
+		paint.beginPath();
+		paint.fillStyle = "white";
+		paint.bezierCurveTo(180,250,195,207,250,210);
+		paint.quadraticCurveTo(310,207,330,250);
+		
+		paint.quadraticCurveTo(320,320,250,320);
+		paint.quadraticCurveTo(190,320,180,250);
+		paint.fill();
+		paint.stroke();
+		
+		
+		
+		paint.beginPath();
+		paint.fillStyle = "white";
+		paint.arc(255,260,50,0,Math.PI ,false);
+		paint.moveTo(205,260);
+		paint.lineTo(305,260);
+		paint.stroke();
+		paint.fill();
+		
+		
+		
+		
+			//铃铛
+		
+		
+		paint.beginPath();
+		paint.fillStyle = "yellow";
+		paint.arc(250,233,25,0,Math.PI * 2,false);
+		paint.fill();
+		paint.stroke();
+		
+		
+		paint.beginPath();
+		paint.fillStyle = "yellow";
+		paint.bezierCurveTo(228,220,250,215,275,220);
+		paint.quadraticCurveTo(278,221,277,225);
+		paint.quadraticCurveTo(250,220,225,225);
+		paint.quadraticCurveTo(222,222,228,220);
+		paint.fill();
+		paint.stroke();
+		
+		
+		paint.beginPath();
+		paint.fillStyle = "dimgrey";
+		paint.arc(250,239,6,0,Math.PI *2,false);
+		paint.fill();
+		paint.stroke();
+		
+		
+		paint.beginPath();
+		paint.fillStyle = "black";
+		paint.moveTo(250,245);
+		paint.lineTo(250,259);
+		paint.fill();
+		paint.stroke();
+	
+		
+		
+		
+		
+		
+		
+		//右拳
+		
+		paint.beginPath();
+		paint.fillStyle = "white";
+		paint.arc(368,277,20,0,Math.PI*2,false);
+		paint.fill();
+		paint.stroke();
+		
+		
+		
+		//脚
+		
+		paint.beginPath();
+		paint.fillStyle = "white";
+		paint.bezierCurveTo(150,350,90,370,150,400);
+		paint.quadraticCurveTo(205,420,250,390);
+		paint.fill();
+		paint.stroke();
+		
+		paint.beginPath();
+		paint.fillStyle = "white";
+		paint.moveTo(250,390);
+		paint.lineTo(250,350);
+			paint.fill();
+		paint.stroke();
+	
+		
+		
+		
+		
+		
+		
+		
+			paint.beginPath();
+		paint.bezierCurveTo(250,390,335,420,380,400);
+		paint.quadraticCurveTo(390,370,341,350);
+		
+		paint.fill();
+		paint.stroke();
+	
+		
+		
+		
+		
+		
+	</script>
+	
+	
+	
+	
+</html>

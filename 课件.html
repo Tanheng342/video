@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>使用Canvas</title>
+		<style type="text/css">
+			.clearfix {
+				clear: both;
+			}
+			
+			.main {
+				background-color: #fff;
+			}
+			
+			.bg {
+				background-color: #eee;
+				border: 1px solid #ccc;
+			}
+			
+			.content {
+				overflow: hidden;
+			}
+			
+			.oLeft,
+			.oRight {
+				width: 45%;
+				float: left;
+				text-align: left;
+			}
+			
+			.oRight {
+				margin-left: 5%;
+			}
+			
+			img {
+				width: 100%;
+			}
+			
+			.title {
+				color: #f66;
+				cursor: pointer;
+			}
+			
+			.con {
+				color: #666;
+				display: none;
+			}
+			
+			h1,
+			h2,
+			h3,
+			h4,
+			h5,
+			h6 {
+				font-family: "黑体";
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="main">
+			<div class="bdsharebuttonbox"><a href="#" class="bds_more" data-cmd="more"></a><a href="#" class="bds_qzone" data-cmd="qzone"></a><a href="#" class="bds_tsina" data-cmd="tsina"></a><a href="#" class="bds_tqq" data-cmd="tqq"></a><a href="#" class="bds_renren" data-cmd="renren"></a><a href="#" class="bds_weixin" data-cmd="weixin"></a></div>
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdPic":"","bdStyle":"0","bdSize":"16"},"share":{},"image":{"viewList":["qzone","tsina","tqq","renren","weixin"],"viewText":"分享到：","viewSize":"16"},"selectShare":{"bdContainerClass":null,"bdSelectMiniList":["qzone","tsina","tqq","renren","weixin"]}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+			<div class="bshare-custom"><a title="分享到QQ空间" class="bshare-qzone"></a><a title="分享到新浪微博" class="bshare-sinaminiblog"></a><a title="分享到人人网" class="bshare-renren"></a><a title="分享到腾讯微博" class="bshare-qqmb"></a><a title="分享到网易微博" class="bshare-neteasemb"></a><a title="更多平台" class="bshare-more bshare-more-icon more-style-addthis"></a><span class="BSHARE_COUNT bshare-share-count">0</span></div><script type="text/javascript" charset="utf-8" src="http://static.bshare.cn/b/buttonLite.js#style=-1&amp;uuid=&amp;pophcol=2&amp;lang=zh"></script><script type="text/javascript" charset="utf-8" src="http://static.bshare.cn/b/bshareC0.js"></script>
+			<!-- JiaThis Button BEGIN -->
+<div class="jiathis_style_32x32">
+	<a class="jiathis_button_qzone"></a>
+	<a class="jiathis_button_tsina"></a>
+	<a class="jiathis_button_tqq"></a>
+	<a class="jiathis_button_weixin"></a>
+	<a class="jiathis_button_renren"></a>
+	<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	<a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+			<h1>一、canvas</h1>
+			<div class="content bg">
+				<h2>1、概念</h2>
+				<div class="oLeft">
+					<p>canvas一般就是用来绘制图像的</p>
+				</div>
+				<div class="oRight">
+				</div>
+				<div class="clearfix"></div>
+				<h2>2、基本知识</h2>
+				<div class="oLeft">
+					<p>上下文对象
+						<br/>&nbsp;&nbsp;var canvas = doucment.getElementById("canvas");
+						<br/>&nbsp;&nbsp;var ctx = canvas.getContext("2d");
+
+						<br/>&nbsp;&nbsp;ctx.fillStyle = "color";// 填充样式
+						<br/>&nbsp;&nbsp;ctx.strokeStyle = "color";//边框样式
+
+						<br/>&nbsp;&nbsp;ctx.fill();//填充区域
+						<br/>&nbsp;&nbsp;ctx.stroke();//绘制边框</p>
+						
+						<br/>&nbsp;&nbsp;附：颜色值：
+						<br/>&nbsp;&nbsp;#fff
+						<br/>&nbsp;&nbsp;#642
+						<br/>&nbsp;&nbsp;rgb(255, 128, 0)
+						<br/>&nbsp;&nbsp;rgba(100, 100, 100, 0.8)
+						<br/>&nbsp;&nbsp;hsl(20, 62%, 28%)
+						<br/>&nbsp;&nbsp;hsla(40, 82%, 33%, 0.6)
+						<br/>&nbsp;&nbsp;red
+
+				</div>
+				<div class="clearfix"></div>
+				<h2>3、绘制矩形( <a href="canvas/绘制矩形.html" target="_blank">案例</a> )</h2>
+				<div class="oLeft">
+					<p>上下文对象
+						<br/>&nbsp;&nbsp;//1、设置填充样式或者边框样式(ctx.fillStyle = "color";或者ctx.strokeStyle = "color";)
+						<br/>&nbsp;&nbsp;//2、绘制矩形区域(如果采用fillRect或者strokeRect绘制矩形，可以省略第3步);
+						<br/>&nbsp;&nbsp;//3、填充或者加上边框(ctx.fill();或者ctx.stroke();)</p>
+				</div>
+				<div class="clearfix"></div>
+				<h2>4、清除矩形区域</h2>
+				<div class="oLeft">
+					<p>作用：就像刚交完工的房子，有很多垃圾，你需要清理，清理除一块区域，以后将作为你的卧室。
+						<br/>&nbsp;&nbsp;ctx.clearRect(x,y,w,h);</p>
+				</div>
+				<div class="clearfix"></div>
+				<h2>5、圆弧 ( <a href="canvas/绘制圆.html" target="_blank">案例</a> ) ( <a href="canvas/圆弧.html" target="_blank">练习</a> )</h2>
+				<div class="oLeft">
+					<img src="IMG/园.png"/>
+					<p><br/>&nbsp;&nbsp;//1、设置填充样式或者边框样式(ctx.fillStyle = "color";或者ctx.strokeStyle = "color";)
+						<br/>&nbsp;&nbsp;//2、绘制原型区域
+						<br/>&nbsp;&nbsp;ctx.arc(x,y,r,startAngle,endAngle,boolean);
+						<br/>&nbsp;&nbsp;r代表半径，startAngle,endAngle分别代表开始角度和结束角度，最后一个参数表示true(逆时针),false(顺时针)
+						<br/>&nbsp;&nbsp;//3、填充或者加上边框(ctx.fill();或者ctx.stroke();)
+
+						<br/>&nbsp;&nbsp;注：1、在绘制圆弧的时候，必须使用ctx.beginPath()开始和ctx.closePath()结束，当然，前提条件时你要画规则的图形
+						<br/>&nbsp;&nbsp;2、这里的开始角度和结束角度不是deg，而是Math.PI*(相应的值)。</p>
+				</div>
+				<div class="clearfix"></div>
+				<h2>6、路径  </h2>
+				<div class="oLeft">
+					<p><br/>&nbsp;&nbsp;ctx.beginPath()与ctx.closePath()
+						<br/>&nbsp;&nbsp;注：如果不加的话，就会出现“灵异事件”（它将你的上一个结束点作为接下来的开始点）；变得不是你想要的图形。</p>
+				</div>
+				<div class="clearfix"></div>
+				<h2>7、绘制线段 ( <a href="canvas/绘制线段.html" target="_blank">案例1</a> )( <a href="canvas/线段.html" target="_blank">练习</a> )</h2>
+				<div class="oLeft">
+					<p><br/>&nbsp;&nbsp;ctx.moveTo(x,y);-----这里必须以moveTo开头，其实是将你的原点移动了位置
+						<br/>&nbsp;&nbsp;ctx.lineTo(x,y);---绘制接下来的点。
+						<br/>&nbsp;&nbsp;注：一般情况下、只需要一个moveTo即可。
+						<br/>&nbsp;&nbsp;注：线条属性lineCap： context.lineCap = 'butt';  context.lineCap = 'round';context.lineCap = 'square'( <a href="canvas/线条属性.html" target="_blank">案例</a> )
+						<br/>&nbsp;&nbsp;注：线条属性lineJoin： context.lineJoin = 'miter';  context.lineJoin = 'bevel';context.lineJoin = 'round';( <a href="canvas/3.3.html" target="_blank">案例</a> )
+					</p>
+					<img src="IMG/pic1.png" style="width: 300px;"/>
+					<img src="IMG/pic2.png" style="width: 300px;"/>
+					<img src="IMG/pic3.png" style="width: 300px;"/>
+					<br />( <a href="canvas/3.3.html" target="_blank">案例2</a> )( <a href="canvas/4.1.html" target="_blank">作业</a> )
+					<br/>&nbsp;&nbsp;公式：cxt.lineTo(Math.cos((18 + i * 72 ) / 180 * Math.PI) * R + x, -Math.sin((18 + i * 72 ) / 180 * Math.PI) * R + y);
+             		<br/>&nbsp;&nbsp;&nbsp;&nbsp; cxt.lineTo(Math.cos((54 + i * 72 ) / 180 * Math.PI) * r + x, -Math.sin((54 + i * 72 ) / 180 * Math.PI) * r + y);
+				</div>
+				<div class="clearfix"></div>
+				<h2>8、绘制贝塞尔曲线 ( <a href="canvas/贝塞尔曲线.html" target="_blank">案例</a> )</h2>
+				<div class="oLeft">
+					<p><br/>&nbsp;&nbsp;context.bezierCurveTo(cp1x,cp1y,cp2x,cp2y,x,y)
+	<br/>&nbsp;&nbsp;绘制二次样条曲线 context.quadraticCurveTo(qcpx,qcpy,qx,qy)
+	<br/>&nbsp;&nbsp;cp1x:第一个控制点x坐标		cp1y:第一个控制点y坐标		cp2x:第二个控制点x坐标		cp2y:第二个控制点y坐标
+	<br/>&nbsp;&nbsp;x:终点x坐标	y:终点y坐标	qcpx:二次样条曲线控制点x坐标	qcpy:二次样条曲线控制点y坐标
+	<br/>&nbsp;&nbsp;qx:二次样条曲线终点x坐标	qy:二次样条曲线终点y坐标
+	<br/>&nbsp;&nbsp;<br/>&nbsp;&nbsp;注：context.quadraticCurveTo(qcpx,qcpy,qx,qy)还可以换成
+	<br/>&nbsp;&nbsp;	context.bezierCurveTo(x,y,cp2x,cp2y,x,y),第一组的x和y表示的是第一条曲线的终点
+					</p>
+				</div>
+				<div class="clearfix"></div>
+				<h2>9、线性渐变 ( <a href="canvas/线性渐变.html" target="_blank">案例</a> )</h2>
+				<div class="oLeft">
+					<p><br/>&nbsp;&nbsp;var lg= context.createLinearGradient(xStart,yStart,xEnd,yEnd)
+					<br/>&nbsp;&nbsp;lg.addColorStop(offset,color);
+					<br/>&nbsp;&nbsp;eg:(lg.addColorStop(0,"red");lg.addColorStop(0.5,"green");lg.addColorStop(1,"blue"))
+					<br/>&nbsp;&nbsp;ctx.fillStyle = lg;
+					</p>
+				</div>
+				<div class="clearfix"></div>
+				<h2>10、径向渐变（发散）( <a href="canvas/径向渐变.html" target="_blank">案例</a> )
+	</h2>
+				<div class="oLeft">
+					<p><br/>&nbsp;&nbsp;var rg=context.createRadialGradient(xStart,yStart,radiusStart,xEnd,yEnd,radiusEnd)
+	<br/>&nbsp;&nbsp;径向渐变（发散）颜色rg.addColorStop(offset,color)
+	<br/>&nbsp;&nbsp;xStart:发散开始圆心x坐标
+	<br/>&nbsp;&nbsp;yStart:发散开始圆心y坐标	radiusStart:发散开始圆的半径	xEnd:发散结束圆心的x坐标	yEnd:发散结束圆心的y坐标
+	<br/>&nbsp;&nbsp;radiusEnd:发散结束圆的半径	offset:设定的颜色离渐变结束点的偏移量(0~1)
+	<br/>&nbsp;&nbsp;color:绘制时要使用的颜色
+	
+	<br/>&nbsp;&nbsp;用法同上：9、线性渐变
+	<br/>&nbsp;&nbsp;案例：同心圆、三角案例、扇形案例
+					</p>
+				</div>
+				<div class="clearfix"></div>
+				<h2>11、图形变形（平移、旋转、缩放）</h2>
+				<div class="oLeft">
+					<p><br/>&nbsp;&nbsp;ctx.translate(x,y);
+				<br/>&nbsp;&nbsp;ctx.rotate(Math.PI*(angleValue));
+				<br/>&nbsp;&nbsp;ctx.scale(x,y);
+				<br/>&nbsp;&nbsp;注：平移2个值，缩放2个值，旋转角度是弧度
+					</p>
+				</div>
+				<div class="clearfix"></div>
+				<h2>12、transform() 方法</h2>
+				<div class="oLeft">
+					<br/>&nbsp;&nbsp;context.transform(a,b,c,d,e,f);
+					<br/>&nbsp;&nbsp;context.setTransform(1, 0, 0, 1, 100, 100);
+					<br/>&nbsp;&nbsp;///////////////////////////
+		          <br/>&nbsp;&nbsp;  // a c e
+		          <br/>&nbsp;&nbsp;  // b d f
+		          <br/>&nbsp;&nbsp;  // 0 0 1
+		          <br/>&nbsp;&nbsp;  //////////////////////////
+		         <br/>&nbsp;&nbsp;   // a,d 水平、垂直缩放
+		          <br/>&nbsp;&nbsp;  // b,c 水平、垂直倾斜
+		         <br/>&nbsp;&nbsp;   // c,f 水平、垂直位移
+		         <br/>&nbsp;&nbsp;   //////////////////////////
+					</p>
+				</div>
+				<div class="clearfix"></div>
+				<h2>13、给图形绘制阴影 </h2>
+				<div class="oLeft">
+					<p><br/>&nbsp;&nbsp;ctx.shadowOffsetX = "5";
+						<br/>&nbsp;&nbsp;ctx.shadowOffsetY = "5";
+						<br/>&nbsp;&nbsp;ctx.shadowBlur = "5";
+						<br/>&nbsp;&nbsp;ctx.shadowColor = "red";
+						<br/>&nbsp;&nbsp;绘制需要的图形
+					</p>
+				</div>
+				<div class="clearfix"></div>
+				<h2>14、绘制文字</h2>
+				<div class="oLeft">
+					<p><br/>&nbsp;&nbsp;ctx.font="italic 30px 微软雅黑";//顺序不能改
+						<br/>&nbsp;&nbsp;*ctx.fillStyle = "color";或者ctx.strokeStyle = "color";
+						<br/>&nbsp;&nbsp;ctx.textBaseline = "";设置垂直对齐方式
+						<br/>&nbsp;&nbsp;ctx.textAlign = "";设置水平对齐方式
+						<br/>&nbsp;&nbsp;ctx.fillText("文本",x,y)（实心字）或者ctx.strokeText("文本",x,y)（字的轮廓）;
+						<br/>&nbsp;&nbsp;注：上面带*的那个设置，其实设置的时字体的颜色
+					</p>
+				</div>
+				<div class="clearfix"></div>
+				<h2>15、保存和恢复状态（context）</h2>
+				<div class="oLeft">
+					<p><br/>&nbsp;&nbsp;ctx.save();//保存当前绘制的图形，
+					<br/>&nbsp;&nbsp;ctx.restore();//恢复到离他最近的那个save的状态
+					</p>
+				</div>
+				<div class="clearfix"></div>
+				<h2>16、图像组合( <a href="canvas/刮刮卡.html" target="_blank">案例</a> )</h2>
+				<div class="oLeft">
+					<p><br/>&nbsp;&nbsp;在绘制完成第一个图形之后，加
+						<br/>&nbsp;&nbsp; context.globalCompositeOperation=type
+						<br/>&nbsp;&nbsp; 再接着绘制第二个图形
+						
+						<br/>&nbsp;&nbsp; type：
+						<br/>&nbsp;&nbsp; source-over（默认值）:在原有图形上绘制新图形
+						<br/>&nbsp;&nbsp; destination-over:在原有图形下绘制新图形
+						<br/>&nbsp;&nbsp; source-in:显示原有图形和新图形的交集，新图形在上，所以颜色为新图形的颜色
+						<br/>&nbsp;&nbsp; destination-in:显示原有图形和新图形的交集，原有图形在上，所以颜色为原有图形的颜色
+						<br/>&nbsp;&nbsp; source-out:只显示新图形非交集部分
+						<br/>&nbsp;&nbsp; destination-out:只显示原有图形非交集部分,是将交集的部分转化为透明
+						<br/>&nbsp;&nbsp; source-atop:显示原有图形和交集部分，新图形在上，所以交集部分的颜色为新图形的颜色
+						<br/>&nbsp;&nbsp; destination-atop:显示新图形和交集部分，新图形在下，所以交集部分的颜色为原有图形的颜色
+						<br/>&nbsp;&nbsp; lighter:原有图形和新图形都显示，交集部分做颜色叠加
+						<br/>&nbsp;&nbsp; xor:重叠飞部分不现实
+						<br/>&nbsp;&nbsp; copy:只显示新图形
+					</p>
+				</div>
+				<div class="clearfix"></div>
+				<h2>17、结合setInterval制作动画( <a href="canvas动画/index.html" target="_blank">案例</a> )</h2>
+				<div class="oLeft">
+					<p><br/>&nbsp;&nbsp;window.setInterval(function(){
+		<br/>&nbsp;&nbsp;//执行的方法体
+	<br/>&nbsp;&nbsp;},10)；
+					</p>
+				</div>
+				<div class="clearfix"></div>
+				<h2>18、绘图 context.drawImage( <a href="canvas/绘制图像.html" target="_blank">案例</a> )</h2>
+				<div class="oLeft">
+					<p><br/>&nbsp;&nbsp;context.drawImage(image,x,y)
+					<br/>&nbsp;&nbsp;image:Image对象var img=new Image(); img.src="url(...)";
+					<br/>&nbsp;&nbsp;x:绘制图像的x坐标	y:绘制图像的y坐标
+					<br/>&nbsp;&nbsp;context.drawImage(image,x,y,w,h)
+					<br/>&nbsp;&nbsp;image:Image对象var img=new Image(); img.src="url(...)";
+					<br/>&nbsp;&nbsp;x:绘制图像的x坐标	y:绘制图像的y坐标	w:绘制图像的宽度		h:绘制图像的高度
+					<br/>&nbsp;&nbsp;context.drawImage(image,sx,sy,sw,sh,dx,dy,dw,dh):选取图像的一部分矩形区域进行绘制
+					<br/>&nbsp;&nbsp;image:Image对象var img=new Image(); img.src="url(...)";
+					<br/>&nbsp;&nbsp;sx：图像上的x坐标	sy：图像上的y坐标	sw：矩形区域的宽度	sh：矩形区域的高度
+					<br/>&nbsp;&nbsp;dx：画在canvas的x坐标		dy：画在canvas的y坐标		dw：画出来的宽度		dh：画出来的高度
+					</p>
+				</div>
+			</div>
+		</div>
+	</body>
+	<script src="js/jquery-1.11.0.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+	</script>
+
+</html>

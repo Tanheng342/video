@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<canvas id="canvas" width="500" height="500">您的浏览器不支持canvas标签，请更换别的浏览器试试。</canvas>
+	</body>
+	<script type="text/javascript">
+		//canvas跟js分不开
+		
+		//1、获得DOM节点
+		var canvas = document.getElementById("canvas");
+		//2、获取上下文对象  --- 绘图就是基于ctx的
+		var ctx = canvas.getContext("2d");
+		//边框
+		ctx.strokeStyle = "#f66";//rgb,rgba,lab
+		//将边框绘制出来
+		ctx.stroke();
+		
+		//背景颜色----填充颜色
+		ctx.fillStyle = "#00f";
+		ctx.fill();
+	</script>
+</html>

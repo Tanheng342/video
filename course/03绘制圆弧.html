@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			canvas{
+				border: 1px solid #ccc;
+			}
+		</style>
+	</head>
+	<body>
+		<canvas id="canvas" width="500" height="500">您的浏览器不支持canvas标签，请更换别的浏览器试试。</canvas>
+	</body>
+	<script type="text/javascript">
+		
+		//1、获得DOM节点
+		var canvas = document.getElementById("canvas");
+		//2、获取上下文对象  --- 绘图就是基于ctx的
+		var ctx = canvas.getContext("2d");
+		
+		/**
+		 * ctx.arc(x,y,r,startAng,endAng,boolean);
+		 * x,y,r  圆心点坐标、半径
+		 * startAng,endAng  开始的角度，结束的角度  此时不能使用deg   使用的是Math.PI
+		 * boolean表示的是绘制图形，顺时针--false、逆时针---true
+		 * 最后一个参数可以省略，默认就是false
+		 * 
+		 * 切记 要绘制边框或者填充颜色
+		 * ctx.fill();
+		 * ctx.stroke();
+		 * 
+		 * 
+		 * canvas绘制的图像，填充的时候  收尾相连，起始点与终止点相连，形成闭合的区域会被填充
+		 */
+		
+		ctx.arc(100,100,60,0,Math.PI/2,true);
+		ctx.stroke();
+		
+		ctx.beginPath();
+		
+		ctx.fillStyle = "#f66";
+		ctx.arc(200,200,60,0,Math.PI/2,false);
+		ctx.fill();
+		
+		
+		ctx.beginPath();
+		
+		ctx.fillStyle = "#f66";
+		ctx.arc(300,300,60,0,Math.PI/2);
+		ctx.fill();
+	</script>
+</html>

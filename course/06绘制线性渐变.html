@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			canvas{
+				border: 1px solid #ccc;
+			}
+		</style>
+	</head>
+	<body>
+		<canvas id="canvas" width="500" height="500">您的浏览器不支持canvas标签，请更换别的浏览器试试。</canvas>
+	</body>
+	<script type="text/javascript">
+		
+		//1、获得DOM节点
+		var canvas = document.getElementById("canvas");
+		//2、获取上下文对象  --- 绘图就是基于ctx的
+		var ctx = canvas.getContext("2d");
+		//渐变区域及走向
+		var lg = ctx.createLinearGradient(0,0,500,500);
+		//偏移量及颜色设置，偏移量0-1
+		lg.addColorStop(0,"#f00");
+		lg.addColorStop(0.5,"#0f0");
+		lg.addColorStop(1,"#00f");
+		
+//		ctx.fillStyle = lg;
+//		ctx.fillRect(0,0,500,500)
+		ctx.strokeStyle = lg;
+		ctx.lineWidth = 15;
+		ctx.strokeRect(0,0,500,500);
+	</script>
+</html>
